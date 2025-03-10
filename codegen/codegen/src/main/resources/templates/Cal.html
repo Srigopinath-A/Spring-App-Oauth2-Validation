@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<h1>Simple Calculator</h1>
+
+<!-- Add Form -->
+<form action="/User/Add" method="get">
+    <label for="num1">First Number: </label>
+    <input type="number" name="num1" required>
+
+    <label for="num2">Second Number: </label>
+    <input type="number" name="num2" required>
+
+    <button type="submit">Add</button>
+</form>
+
+<!-- Subtract Form -->
+<form action="/User/Sub" method="get">
+    <label for="num1">First Number: </label>
+    <input type="number" name="num1" required>
+
+    <label for="num2">Second Number: </label>
+    <input type="number" name="num2" required>
+
+    <button type="submit">Subtract</button>
+</form>
+
+<!-- Result Display -->
+<div th:if="${result != null}">
+    <h2>Result: <span th:text="${result}"></span></h2>
+</div>
+
+</body>
+</html>
